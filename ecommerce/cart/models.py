@@ -19,3 +19,13 @@ class Cart(models.Model):
 
     def __str__(self):
         return f'{self.quantity} of {self.item.name}'
+    
+    # Order Model
+class Order(models.Model):
+    orderitems  = models.ManyToManyField(Cart)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    ordered = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user.username
