@@ -1,6 +1,5 @@
 from django.contrib import messages
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView
+from django.shortcuts import get_object_or_404, redirect
 from .models import Cart, Order
 from products.models import Product
 
